@@ -1,0 +1,5 @@
+<div class="navbar-wrapper">
+  @for(i of item; track item) {
+    <app-nav-content (NavMobCollapse)="navMobCollapse()" [item]="i"></app-nav-content>
+  }
+</div>

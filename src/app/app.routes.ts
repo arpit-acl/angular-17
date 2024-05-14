@@ -19,23 +19,31 @@ export const routes: Routes = [
             }
         ]
     },
-    // {
-    //     path: 'admin',
-    //     // component: AdminComponent,
-    //     children: [
-    //         {
-    //             path: 'admin',
-    //             redirectTo: 'admin/dashboard',
-    //             pathMatch: 'full'
-    //         },
-    //         {
-    //             path: 'dashboard',
-    //             // loadComponent: () => import('')
-    //         },
-    //         {
-    //             path: 'product',
-    //             // loadChildren: () => import('')
-    //         }
-    //     ]
-    // }
+    {
+        path: 'admin',
+        title: 'Admin',
+        children: [
+            {
+              path: '',
+              loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule)
+            }
+          ],
+        //   canActivate: [authGuard],
+        // component: AdminComponent,
+        // children: [
+        //     {
+        //         path: 'admin',
+        //         redirectTo: 'admin/dashboard',
+        //         pathMatch: 'full'
+        //     },
+        //     {
+        //         path: 'dashboard',
+        //         // loadComponent: () => import('')
+        //     },
+        //     {
+        //         path: 'product',
+        //         // loadChildren: () => import('')
+        //     }
+        // ]
+    }
 ];

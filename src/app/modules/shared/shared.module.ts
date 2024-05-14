@@ -15,7 +15,7 @@ import 'mousetrap';
 
 // bootstrap import
 import { NgbDropdownModule, NgbNavModule, NgbModule, NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
-import { RouterModule } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -28,9 +28,11 @@ import { RouterModule } from '@angular/router';
     NgbDropdownModule,
     NgbNavModule,
     NgbModule,
+    RouterLink,
     // NgScrollbarModule
   ],
   exports: [
+    RouterLink,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
